@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - changeSet:
+        id: 10
+        author: alyukov
+        changes:
+          - addUniqueConstraint:
+              columnNames: name
+              tableName: author
+              constraintName: author_name_unique_constraint

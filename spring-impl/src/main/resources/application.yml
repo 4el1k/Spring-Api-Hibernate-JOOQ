@@ -1,0 +1,17 @@
+db:
+  url: jdbc:postgresql://localhost:5432/agona
+  username: admin
+  hikari:
+    max-pool-size: 20
+  password: admin
+  driver:
+    classname: org.postgresql.Driver
+
+hibernate:
+  ddl:
+    auto: validate
+  dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  show_sql: true
+  enable_lazy_load_no_trans: true
+  hbm2ddl:
+    auto: validate

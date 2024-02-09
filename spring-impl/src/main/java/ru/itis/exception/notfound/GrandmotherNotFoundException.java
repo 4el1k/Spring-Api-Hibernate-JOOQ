@@ -1,0 +1,13 @@
+package ru.itis.exception.notfound;
+
+import java.util.UUID;
+
+public class GrandmotherNotFoundException extends NotFoundException {
+    public GrandmotherNotFoundException(String name) {
+        super("Is entity with name = %s - not found".formatted(name));
+    }
+
+    public GrandmotherNotFoundException(UUID id) {
+        super("Is entity with id = %s - not found".formatted(id));
+    }
+}

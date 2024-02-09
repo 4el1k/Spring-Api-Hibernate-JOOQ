@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 12
+      author: salyukov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: manager_id
+            baseTableName: author
+            constraintName: author_managerid_foreignkey_constraint
+            referencedColumnNames: id
+            referencedTableName: manager

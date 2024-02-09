@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 11
+      author: salyukov
+      changes:
+        - createTable:
+            tableName: manager
+            columns:
+              - column:
+                  - name: id
+                    type: uuid
+                    defaultValueComputed: uuid_generate_v4()
+                    constraints:
+                      - primaryKey: true
+                        primaryKeyName: manager_pk
+              - column:
+                  name: name
+                  type: varchar(30)
+                  constraints:
+                    - nullable: true
+              - column:
+                  name: author_id
+                  type: uuid
+              - column:
+                  name: age
+                  type: int

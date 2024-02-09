@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: salyukov
+      changes:
+        - createTable:
+            tableName: music
+            columns:
+              - column:
+                  - name: id
+                    type: uuid
+                    defaultValueComputed: uuid_generate_v4()
+                    constraints:
+                      - primaryKey: true
+                        primaryKeyName: music_pk
+              - column:
+                  name: name
+                  type: varchar(30)
+                  constraints:
+                    - nullable: true
+              - column:
+                  name: storage_name
+                  type: text
+                  constraints:
+                    - nullable: true
+              - column:
+                  name: author_id
+                  type: uuid

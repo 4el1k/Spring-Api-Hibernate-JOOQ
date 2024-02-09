@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="DDL/2024-01-06--1-init-account-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-07--2-init-author-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-07--3-init-listener-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-07--4-init-music-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-07--5-add-fk-music-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-07--6-init-associative-listener-music-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-07--7-add-fk-associative-listener-music-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-08--08-add-unique-constraint-music-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-08--09-add-unique-constraint-listener-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-08--10-add-unique-constraint-author-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-08--11-init-manager-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-08--12-add-fk-managerid-author-db.yml" relativeToChangelogFile="true"/>
+    <include file="DDL/2024-01-08--13-add-fk-authorid-manager-db.yml" relativeToChangelogFile="true"/>
+</databaseChangeLog>

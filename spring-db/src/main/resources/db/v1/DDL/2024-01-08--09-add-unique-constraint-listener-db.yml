@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - changeSet:
+        id: 9
+        author: alyukov
+        changes:
+          - addUniqueConstraint:
+              columnNames: name
+              tableName: listener
+              constraintName: listener_name_unique_constraint

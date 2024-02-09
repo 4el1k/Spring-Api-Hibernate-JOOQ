@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: salyukov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: author_id
+            baseTableName: music
+            constraintName: music_authorid_foreignkey_constraint
+            referencedColumnNames: id
+            referencedTableName: author

@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: salyukov
+      changes:
+        - createTable:
+            tableName: associative_listener_music
+            columns:
+              - column:
+                  - name: music_id
+                    type: uuid
+                    constraints:
+                      - primaryKey: true
+                        primaryKeyName: music_listener_pk
+              - column:
+                  - name: listener_id
+                    type: uuid
+

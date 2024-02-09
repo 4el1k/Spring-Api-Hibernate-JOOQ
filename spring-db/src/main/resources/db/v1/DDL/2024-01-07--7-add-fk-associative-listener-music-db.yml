@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: salyukov
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: listener_id
+            baseTableName: associative_listener_music
+            constraintName: associativelistenermusic_listenerid_foreignkey_constraint
+            referencedColumnNames: id
+            referencedTableName: listener

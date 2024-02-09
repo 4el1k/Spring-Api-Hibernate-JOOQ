@@ -1,0 +1,47 @@
+plugins {
+    id "nu.studer.jooq" version "8.0"
+}
+
+apply from: 'jooq.gradle'
+
+
+war.archiveFileName = "${project.name}.war"
+
+// это нужно явно указывать или может 1 строка уже говорит о том, что модуль будет в .war собран?
+// в spring-api мы это указали
+/*
+war.enabled = true
+jar.enabled = false
+*/
+
+dependencies {
+    implementation project(':spring-api')
+    implementation 'org.jooq:jooq:3.16.18'
+    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.33'
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final"
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'org.liquibase:liquibase-core:3.10.3'
+    implementation 'org.hibernate:hibernate-core:5.6.5.Final'
+    implementation 'org.springframework.data:spring-data-jpa:2.6.2'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    project(":spring-db").sourceSets.main.resources
+            ]
+        }
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+}

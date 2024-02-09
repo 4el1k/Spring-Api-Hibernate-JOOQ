@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: salyukov
+      changes:
+        - createTable:
+            tableName: listener
+            columns:
+              - column:
+                  - name: id
+                    type: uuid
+                    defaultValueComputed: uuid_generate_v4()
+                    constraints:
+                      - primaryKey: true
+                        primaryKeyName: listener_pk
+              - column:
+                  name: name
+                  type: varchar(30)
+                  constraints:
+                    - nullable: true
+              - column:
+                  - name: age
+                    type: int
+                    constraints:
+                      - nullable: true

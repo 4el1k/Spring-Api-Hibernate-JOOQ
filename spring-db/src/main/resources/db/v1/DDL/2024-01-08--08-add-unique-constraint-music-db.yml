@@ -1,0 +1,9 @@
+databaseChangeLog:
+    - changeSet:
+        id: 8
+        author: alyukov
+        changes:
+          - addUniqueConstraint:
+              columnNames: name
+              tableName: music
+              constraintName: music_name_unique_constraint
